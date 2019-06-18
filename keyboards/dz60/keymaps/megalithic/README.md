@@ -16,7 +16,7 @@ How to flash: https://docs.qmk.fm/#/newbs_flashing
 |-----------------------------------------------------------------------------------------+
 |     S(    |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  S) |  U  | Del |
 |-----------------------------------------------------------------------------------------+
-| Hyper |  Alt  |  Cmd  |  Space/L4  |  F19  |    Space   |  L3  |  L2  |  L  |  D  |  R  |
+| Hyper |  Alt  |  Cmd  |  Space/L3  |  F19  |    Space   |  L3  |  L2  |  L  |  D  |  R  |
 `-----------------------------------------------------------------------------------------'
 ```
 
@@ -24,7 +24,7 @@ How to flash: https://docs.qmk.fm/#/newbs_flashing
 -   Caps Lock is Control on hold, Esc on tap
 -   Hyper/ESC on LControl
 -   Hold `D` to activate layer 1
--   Hold LSpace to activate layer 4 (Function keys)
+-   Hold LSpace to activate layer 3 (Function keys)
 -   Hold `F19` (Hammerspoon primary modifier key)
 -   Hold `L3` to activate layer 3
 -   Hold `L2` to activate layer 2
