@@ -14,7 +14,6 @@ enum layers {
   _BASE,
   _ARROWS,
   _HDUE, // Home, PgDown, PgUp, End
-  _MOUSE,
   _FN
 };
 
@@ -26,15 +25,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         * Hold `D` to activate layer 1
         * Hold LSpace to activate layer 4 (Function keys)
         * Hold `F19` (Hammerspoon primary modifier key)
-        * Hold `L3` to activate layer 3
-        * Hold `L2` to activate layer 2
+        * Hold `_FN` to activate layer 3
+        * Hold `_HDUE` to activate layer 2
     */
     [_BASE] = LAYOUT_all(
         KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_BSPC,
         KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
-        LCTL_T(KC_ESC), KC_A, KC_S, LT(_ARROWS, KC_D), KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
+        CTRL_ESC, KC_A, KC_S, LT(_ARROWS, KC_D), KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
         KC_LSPO, KC_NO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSPC, KC_UP, KC_DEL,
-        HYPER, KC_LALT, KC_LGUI, LT(_FN, KC_SPC), KC_F19, KC_SPC, MO(_FN), MO(_FN), KC_LEFT, KC_DOWN, KC_RIGHT),
+        HYPER, KC_LALT, KC_LGUI, LT(_FN, KC_SPC), KC_F19, KC_SPC, MO(_FN), MO(_HDUE), KC_LEFT, KC_DOWN, KC_RIGHT),
 
     /*  L1:
         * Vim arrows (HJKL)
@@ -52,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
 
     /*  L2:
-        * Home, End, Page Up, Page Down
+        * Home, Page Down, Page Up, End
         * Delete word forward/back on W/B
     */
     [_HDUE] = LAYOUT_all(
@@ -63,19 +62,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
 
     /*  L3:
-        * Mouse keys
-            * Cursor movement: HJKL
-            * MB 1, 2, and 3 on F, D, and S, respectively
-            * Mouse wheel: up (V), down (R) (reversed because of Natural Scrolling)
-    */
-    [_MOUSE] = LAYOUT_all(
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, KC_WH_D, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, KC_BTN3, KC_BTN2, KC_BTN1, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______, _______,
-        _______, _______, _______, _______, _______, KC_WH_U, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
-
-    /*  L4:
         * F1-10
         * Mute on backspace
         * RGB (underglow) controls
