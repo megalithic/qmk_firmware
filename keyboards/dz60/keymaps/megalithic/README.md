@@ -2,8 +2,6 @@
 
 A macOS-specific keymap for DZ60 configured in a standard 60% ANSI layout, with a split space bar with center F19.
 
-[![deprecated](https://i.imgur.com/lFP2O41.png)](http://www.keyboard-layout-editor.com/#/gists/4b156fdf2c1426bffc82fadd2b1c5634)
-
 ## Base Layer
 
 ```
