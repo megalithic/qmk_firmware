@@ -1,62 +1,93 @@
 #include QMK_KEYBOARD_H
 
-// Make special keycodes more visible
-#define ____ KC_TRNS
-#define XXXX KC_NO
+#define WB A(KC_LEFT)
+#define WF A(KC_RIGHT)
+#define DWB A(KC_BSPACE)
+#define DWF A(KC_DELETE)
+#define FINE_VOLUP S(A(KC__VOLUP))
+#define FINE_VOLDOWN S(A(KC__VOLDOWN))
 
-// Layer definition
-#define L0 0
-#define L1 1
-#define L2 2
+#define CTRL_ESC MT(MOD_LCTL, KC_ESC)
+#define HYPER ALL_T(KC_ESC)
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
-// Base layer - ANSI QWERTY
-[L0] = LAYOUT_all(
-	KC_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, XXXX, KC_BSPC,
-	KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
-	KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
-	KC_LSFT, XXXX, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,
-	KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, MO(L1), KC_SPC, KC_RALT, MO(L2), KC_LEFT, KC_DOWN, KC_RIGHT),
-
-// Utility layer - RGB and multimedia control
-[L1] = LAYOUT_all(
-	____, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, ____, ____,
-	____, RGB_TOG, RGB_MOD, RGB_M_K, RGB_M_R, ____, ____, KC_PSCR, ____, KC_PAUS, ____, ____, ____, ____,
-	____, RGB_HUI, RGB_HUD, ____, ____, ____, ____, KC_INS, KC_HOME, KC_PGUP, ____, ____, ____,
-	____, ____, RGB_SAI, RGB_SAD, ____, ____, ____, ____, ____, KC_END, KC_PGDN, ____, KC_MPLY, KC_VOLU, KC_MUTE,
-	____, RGB_VAI, RGB_VAD, ____, ____, ____, ____, ____, KC_MPRV, KC_VOLD, KC_MNXT),
-
-// Setup layer - Reset an additional "b" button
-[L2] = LAYOUT_all(
-	RESET, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
-	KC_B, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, RESET,
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____),
-
-/* https://github.com/qmk/qmk_firmware/blob/master/keyboards/dz60/keymaps/kream/keymap.c */
-/* [0] = LAYOUT_60_ansi_split_space_rshift( */
-/*         KC_GESC, KC_1,    KC_2,    KC_3,   KC_4,  KC_5,   KC_6,    KC_7,  KC_8,    KC_9,   KC_0,    KC_MINS, KC_EQL,  KC_BSPC, */
-/*         KC_TAB,  KC_Q,    KC_W,    KC_E,   KC_R,  KC_T,   KC_Y,    KC_U,  KC_I,    KC_O,   KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, */
-/*         MO(1),   KC_A,    KC_S,    KC_D,   KC_F,  KC_G,   KC_H,    KC_J,  KC_K,    KC_L,   KC_SCLN, KC_QUOT, KC_ENT, */
-/*         KC_LSFT, KC_Z,    KC_X,    KC_C,   KC_V,  KC_B,   KC_N,    KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, MO(1), */
-/*         KC_LCTL, KC_LALT, KC_LGUI, KC_SPC, KC_NO, KC_SPC, KC_CAPS, KC_NO, KC_NO,   KC_ENT), */
-
-/* [1] = LAYOUT_60_ansi_split_space_rshift( */
-/*         KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL, */
-/*         _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PSCR, KC_GRV,  KC_TILD, _______, */
-/*         _______, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, _______, */
-/*         _______, KC_SLCK, KC_PAUS, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, */
-/*         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______) */
+enum layers {
+  _BASE,
+  _ARROWS,
+  _HDUE, // Home, PgDown, PgUp, End
+  _MOUSE,
+  _FN
 };
 
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    /*  Base (default) layer:
+        * Space Cadet shifts (parentheses on tap)
+        * Caps Lock is Control on hold, Esc on tap
+        * Hyper/ESC on LControl
+        * Hold `D` to activate layer 1
+        * Hold LSpace to activate layer 4 (Function keys)
+        * Hold `F19` (Hammerspoon primary modifier key)
+        * Hold `L3` to activate layer 3
+        * Hold `L2` to activate layer 2
+    */
+    [_BASE] = LAYOUT_all(
+        KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_BSPC,
+        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
+        LCTL_T(KC_ESC), KC_A, KC_S, LT(_ARROWS, KC_D), KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
+        KC_LSPO, KC_NO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSPC, KC_UP, KC_DEL,
+        HYPER, KC_LALT, KC_LGUI, LT(_FN, KC_SPC), KC_F19, KC_SPC, MO(_FN), MO(_FN), KC_LEFT, KC_DOWN, KC_RIGHT),
 
-/* https://gist.github.com/chrislewisdev/49240931db4edcaed9623a586c96c3eb */
+    /*  L1:
+        * Vim arrows (HJKL)
+        * Vim-like movement across words with W(ord), and B(eginning)
+        * Vim-like movement across pages with N(ext), and P(revious)
+        * Media controls (fine volume controls using Option+Shift)
+        * Backspace/Del on N/M
+        * Hold `F` to activate layer 2
+    */
+    [_ARROWS] = LAYOUT_all(
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, FINE_VOLDOWN, FINE_VOLUP, KC__MUTE, _______,
+        _______, _______, WF, _______, _______, _______, _______, _______, _______, _______, KC_PGUP, KC_MRWD, KC_MFFD, KC_MPLY,
+        _______, _______, _______, _______, LT(_HDUE, _______), _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, WB, KC_PGDN, KC_DEL, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
 
-/* rgb things: https://github.com/qmk/qmk_firmware/blob/master/keyboards/dz60/keymaps/n0velty/keymap.c#L9-L15 */
+    /*  L2:
+        * Home, End, Page Up, Page Down
+        * Delete word forward/back on W/B
+    */
+    [_HDUE] = LAYOUT_all(
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, DWF,     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDOWN, KC_PGUP, KC_END, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, DWB,     _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
 
-/* good ascii map of dz60: https://github.com/qmk/qmk_firmware/tree/master/keyboards/dz60/keymaps/macos_arrow */
-/* REALLY good ascii map of dz60 for osx: https://github.com/qmk/qmk_firmware/tree/master/keyboards/dz60/keymaps/macos_64 */
-/* super robust amounts of customizations and definitions for all the things: https://github.com/qmk/qmk_firmware/tree/master/keyboards/dz60/keymaps/marianas */
-/* https://github.com/qmk/qmk_firmware/tree/master/keyboards/dz60/keymaps/mechmerlin */
+    /*  L3:
+        * Mouse keys
+            * Cursor movement: HJKL
+            * MB 1, 2, and 3 on F, D, and S, respectively
+            * Mouse wheel: up (V), down (R) (reversed because of Natural Scrolling)
+    */
+    [_MOUSE] = LAYOUT_all(
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, KC_WH_D, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, KC_BTN3, KC_BTN2, KC_BTN1, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______, _______,
+        _______, _______, _______, _______, _______, KC_WH_U, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+
+    /*  L4:
+        * F1-10
+        * Mute on backspace
+        * RGB (underglow) controls
+        * RESET firmware on RBackspace
+        * Screen brightness: `Z` (decrease), `X` (increase)
+    */
+    [_FN] = LAYOUT_all(
+        _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, FINE_VOLDOWN, FINE_VOLUP, KC__MUTE, RESET,
+        _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, _______, KC_MRWD, KC_MFFD, KC_MPLY,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_BRMD, KC_BRMU, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+};
+
+// vim:ft=c:ts=2:sw=2
