@@ -14,20 +14,19 @@ How to flash: https://docs.qmk.fm/#/newbs_flashing
 |-----------------------------------------------------------------------------------------+
 | Ctrl/Esc |  A  |  S  | D/L1 |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |   Enter   |
 |-----------------------------------------------------------------------------------------+
-|     S(    |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  S) |  U  | Del |
+|     Sh   |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  Sh |  U  | Del |
 |-----------------------------------------------------------------------------------------+
 | Hyper |  Alt  |  Cmd  |  Space/L3  |  F19  |    Space   |  L3  |  L2  |  L  |  D  |  R  |
 `-----------------------------------------------------------------------------------------'
 ```
 
--   Space Cadet shifts (parentheses on tap)
 -   Caps Lock is Control on hold, Esc on tap
 -   Hyper/ESC on LControl
--   Hold `D` to activate layer 1
+-   Hold CSpace to activate L1
 -   Hold LSpace to activate layer 3 (Function keys)
--   Hold `F19` (Hammerspoon primary modifier key)
--   Hold `L3` to activate layer 3
--   Hold `L2` to activate layer 2
+-   Hold
+-   Hold `L3` to activate L3
+-   Hold `L2` to activate L2
 
 ## `L1` (\_ARROWS)
 

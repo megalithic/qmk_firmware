@@ -22,18 +22,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         * Space Cadet shifts (parentheses on tap)
         * Caps Lock is Control on hold, Esc on tap
         * Hyper/ESC on LControl
-        * Hold `D` to activate layer 1
+        * Hold CSpace to activate L1
         * Hold LSpace to activate layer 4 (Function keys)
-        * Hold `F19` (Hammerspoon primary modifier key)
-        * Hold `_FN` to activate layer 3
-        * Hold `_HDUE` to activate layer 2
+        * Hold `_FN` to activate L3
+        * Hold `_HDUE` to activate L2
     */
     [_BASE] = LAYOUT_all(
         KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_BSPC,
         KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
-        CTRL_ESC, KC_A, KC_S, LT(_ARROWS, KC_D), KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
-        KC_LSPO, KC_NO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSPC, KC_UP, KC_DEL,
-        HYPER, KC_LALT, KC_LGUI, LT(_FN, KC_SPC), KC_F19, KC_SPC, MO(_FN), MO(_HDUE), KC_LEFT, KC_DOWN, KC_RIGHT),
+        CTRL_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
+        KC_LSFT, KC_NO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,
+        HYPER, KC_LALT, KC_LGUI, LT(_FN, KC_SPC), LT(_ARROWS, KC_SPC), KC_SPC, MO(_FN), MO(_HDUE), KC_LEFT, KC_DOWN, KC_RIGHT),
 
     /*  L1:
         * Vim arrows (HJKL)
