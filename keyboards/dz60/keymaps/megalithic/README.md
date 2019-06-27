@@ -1,6 +1,6 @@
 # megalithic (megakeys)
 
-A macOS-specific keymap for DZ60 configured in a standard 60% ANSI layout, with a split space bar with center F19.
+A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) configured in a standard 60% ANSI layout, with a split space bar with center F19.
 
 How to flash: https://docs.qmk.fm/#/newbs_flashing
 
@@ -16,14 +16,13 @@ How to flash: https://docs.qmk.fm/#/newbs_flashing
 |-----------------------------------------------------------------------------------------+
 |     Sh   |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  Sh  |  U  | Del |
 |-----------------------------------------------------------------------------------------+
-| Hyper |  Alt  |  Cmd  |  Space/L3  |  F19  |    Space   |  L3  |  L2  |  L  |  D  |  R  |
+|  L3  |  Alt  |  Cmd  |  Space/L3  |  F19  |    Space   | Hyper |  L2  |  L  |  D  |  R  |
 `-----------------------------------------------------------------------------------------'
 ```
 
 -   Caps Lock is Control on hold, Esc on tap
--   Hyper/ESC on LControl
 -   Hold CSpace to activate L1
--   Hold LSpace to activate layer 3 (Function keys)
+-   Hold LSpace to activate layer 3 (FN keys)
 -   Hold
 -   Hold `L3` to activate L3
 -   Hold `L2` to activate L2
@@ -40,7 +39,7 @@ How to flash: https://docs.qmk.fm/#/newbs_flashing
 |-----------------------------------------------------------------------------------------+
 |           |     |     |     |     |  W← | PDN |     |     |     |     |     |     |     |
 |-----------------------------------------------------------------------------------------+
-|       |       |       |            |       |            |      |      |     |     |     |
+|      |       |       |            |       |            |       |      |     |     |     |
 `-----------------------------------------------------------------------------------------'
 ```
 
@@ -63,7 +62,7 @@ How to flash: https://docs.qmk.fm/#/newbs_flashing
 |-----------------------------------------------------------------------------------------+
 |             |     |     |     |     |  W⌫  |     |     |     |     |     |              |
 |-----------------------------------------------------------------------------------------+
-|       |       |       |                                 |       |       |       |       |
+|      |       |       |            |       |            |       |      |     |     |     |
 `-----------------------------------------------------------------------------------------'
 ```
 
@@ -82,7 +81,7 @@ How to flash: https://docs.qmk.fm/#/newbs_flashing
 |-----------------------------------------------------------------------------------------+
 |             | BR- | BR+ |     |     |     |     |     |     |     |     |               |
 |-----------------------------------------------------------------------------------------+
-|       |       |       |                                 |       |       |       |       |
+|      |       |       |            |       |            |       |      |     |     |     |
 `-----------------------------------------------------------------------------------------'
 ```
 
