@@ -15,6 +15,11 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 1. Click the `Flash` button
 
 
+#### References
+
+- https://beta.docs.qmk.fm/tutorial/newbs_flashing
+
+
 ## Base Layer
 
 ```
