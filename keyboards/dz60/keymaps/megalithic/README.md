@@ -32,13 +32,13 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 |-----------------------------------------------------------------------------------------+
 |   Shift  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  Sh  |  U  | Del |
 |-----------------------------------------------------------------------------------------+
-|  L3  |  Alt  |  Cmd  |  Space/L3  | Hyper |    Space   | Cmd  |  L1   |  L  |  D  |  R  |
+|  L3  |  Alt  |  Cmd  |  Space/L3  | Spc/H |    Space   | Cmd  |  L1   |  L  |  D  |  R  |
 `-----------------------------------------------------------------------------------------'
 ```
 
 -   Caps Lock is LCtrl on hold, Esc on tap
--   Tab is Hyper on hold, Tab on tap
--   Hyper is Hyper on hold, Esc on tap
+-   Tab is Hyper(F19) on hold, Tab on tap
+-   Hyper(F19) is Hyper(F19) on hold, Space on tap
 -   Hold CSpace to activate L1
 -   Hold LSpace to activate layer 3 (FN keys)
 -   Hold `L3` to activate L3
