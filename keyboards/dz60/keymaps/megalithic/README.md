@@ -1,6 +1,6 @@
 # megalithic (megakeys)
 
-A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) configured in a standard 60% ANSI layout, with a split space bar with center F19.
+A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) configured in a standard 60% ANSI layout, with a split space bar with center Hyper (F19).
 
 
 ### Setup
@@ -26,17 +26,19 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 ,-----------------------------------------------------------------------------------------.
 |  ~` |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  | BS  |     |
 |-----------------------------------------------------------------------------------------+
-|   Tab  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   |\   |
+|  Tab/H |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   |\   |
 |-----------------------------------------------------------------------------------------+
 | Ctrl/Esc |  A  |  S  |   D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |   Enter   |
 |-----------------------------------------------------------------------------------------+
-|     Sh   |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  Sh  |  U  | Del |
+|   Shift  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  Sh  |  U  | Del |
 |-----------------------------------------------------------------------------------------+
-|  L3  |  Alt  |  Cmd  |  Space/L3  |   L1  |    Space   | Cmd  | Hyper |  L  |  D  |  R  |
+|  L3  |  Alt  |  Cmd  |  Space/L3  | Hyper |    Space   | Cmd  |  L1   |  L  |  D  |  R  |
 `-----------------------------------------------------------------------------------------'
 ```
 
--   Caps Lock is Control on hold, Esc on tap
+-   Caps Lock is LCtrl on hold, Esc on tap
+-   Tab is Hyper on hold, Tab on tap
+-   Hyper is Hyper on hold, Esc on tap
 -   Hold CSpace to activate L1
 -   Hold LSpace to activate layer 3 (FN keys)
 -   Hold `L3` to activate L3
