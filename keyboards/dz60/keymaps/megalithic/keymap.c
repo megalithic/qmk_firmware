@@ -7,10 +7,11 @@
 #define FINE_VOLUP S(A(KC__VOLUP))
 #define FINE_VOLDOWN S(A(KC__VOLDOWN))
 
-#define HYPER_TAB MT(KC_F19, KC_TAB)
-#define HYPER_SPC MT(KC_F19, KC_SPC)
+// #define HYPER_TAB MT(KC_F19, KC_TAB)
+// #define HYPER_SPC MT(KC_F19, KC_SPC)
 
 // #define HYPER ALL_T(KC_ESC)
+// #define CTRL_ESC MT(MOD_LCTL, KC_ESC)
 #define CTRL_ESC CTL_T(KC_ESC)  // Tap for Escape, hold for Control
 // #define HYPER_TAB ALL_T(KC_TAB)  // Tap for Tab, hold for Hyper (Super+Ctrl+Alt+Shift)
 // #define HYPER_ESC ALL_T(KC_ESC)  // Tap for Tab, hold for Hyper (Super+Ctrl+Alt+Shift)
