@@ -100,7 +100,7 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 |-----------------------------------------------------------------------------------------+
 |          |     |     |     |  L2  |     |  ←  |  ↓  |  ↑  |  →  |     |     |           |
 |-----------------------------------------------------------------------------------------+
-|             | BR- | BR+ |     |     |     |     |     |     |     |     |               |
+|             |     |     |     |     |     |     |     |     |     |     |               |
 |-----------------------------------------------------------------------------------------+
 |      |       |       |            |       |            |  L2  |      |     |      |     |
 `-----------------------------------------------------------------------------------------'
@@ -110,5 +110,4 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 -   Media controls (fine volume controls using Option+Shift)
 -   RGB (underglow) controls
   (https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md#keycodes)
--   Screen brightness: `Z` (decrease), `X` (increase)
 -   Vim arrows (HJKL)
