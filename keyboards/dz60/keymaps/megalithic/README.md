@@ -37,10 +37,9 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 ```
 
 -   Caps Lock is LCtrl on hold, Esc on tap
-> -   Tab is Hyper(F19) on hold, Tab on tap
-> -   Hyper(F19) is Hyper(F19) on hold, Space on tap
--   Hold CSpace to activate L1
--   Hold LSpace to activate layer 3 (FN keys)
+-   Hold Tab to activate L3 (_FN), Tab on tap
+-   Hold MSpace to activate L3 (FN keys)
+-   Hold LSpace to activate L3 (FN keys)
 -   Hold `L3` to activate L3
 -   Hold `L2` to activate L2
 
