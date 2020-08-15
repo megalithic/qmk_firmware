@@ -76,13 +76,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         * Mute on backspace
         * RGB (underglow) controls
         * Vim arrows (HJKL)
+        * Screen brightness: `LARROW` (decrease), `RARROW` (increase)
     */
     [_FN] = LAYOUT_all(
         _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, FINE_VOLDOWN, FINE_VOLUP, KC__MUTE, _______,
         _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, _______, KC_MRWD, KC_MFFD, KC_MPLY,
         _______, _______, _______, _______, LT(_HDUE, _______), _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, LT(_HDUE, _______), _______, _______, _______, _______),
+        _______, _______, _______, _______, _______, _______, _______, LT(_HDUE, _______), _______, KC_BRMD, _______, KC_BRMU),
 };
 
 static bool control_disabled = false;
