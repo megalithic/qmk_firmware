@@ -1,3 +1,8 @@
+
+
+// REF: for dual key layer mapping ->
+// https://github.com/evantravers/qmk_firmware/commit/88016fac52e7c44f4324ee4367c102c70712082b
+
 #include QMK_KEYBOARD_H
 
 #define WB A(KC_LEFT)
