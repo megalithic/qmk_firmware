@@ -1,5 +1,3 @@
-
-
 // REF: for dual key layer mapping ->
 // https://github.com/evantravers/qmk_firmware/commit/88016fac52e7c44f4324ee4367c102c70712082b
 
@@ -37,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*  Base (default) layer:
         -   Caps Lock is LCtrl on hold, Esc on tap
         -   Hold Tab to activate L3 (_FN), Tab on tap
-        -   Hold MSpace to activate L3 (FN keys)
+        -   Hold LCtrl to activate L3 (FN keys)
         -   Hold LSpace to activate L3 (FN keys)
         -   Hold `L3` to activate L3
         -   Hold `L2` to activate L2
@@ -47,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LT(_FN, KC_TAB), KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
         CTRL_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
         KC_LSFT, KC_NO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,
-        KC_F19, KC_LALT, KC_LGUI, LT(_FN, KC_SPC), LT(_FN, KC_SPC), KC_SPC, KC_RGUI, MO(_ARROWS), KC_LEFT, KC_DOWN, KC_RIGHT),
+        LT(_FN, KC_LCTRL), KC_LALT, KC_LGUI, LT(_FN, KC_SPC), KC_F19, KC_SPC, KC_RGUI, MO(_ARROWS), KC_LEFT, KC_DOWN, KC_RIGHT),
 
     /*  L1:
         * Vim arrows (HJKL)
@@ -77,6 +75,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
 
     /*  L3:
+        * 1-0 -> F1-10
+        * Q-P -> 1-0
         * F1-10
         * Mute on backspace
         * RGB (underglow) controls
@@ -85,10 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
     [_FN] = LAYOUT_all(
         _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, FINE_VOLDOWN, FINE_VOLUP, KC__MUTE, _______,
-        _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, _______, KC_MRWD, KC_MFFD, KC_MPLY,
+        _______, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MRWD, KC_MFFD, KC_MPLY,
         _______, _______, _______, _______, LT(_HDUE, _______), _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, LT(_HDUE, _______), _______, KC_BRMD, _______, KC_BRMU),
+
 };
 
 static bool control_disabled = false;
