@@ -11,7 +11,7 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 1. `make dz60:megalithic`
 1. Launch QMK Toolbox
 1. Open your newly compiled `dz60_megalithic.hex`
-1. Put your dz60 in DFU mode: L3 + L2 + RESET `# based on current keymap -> (LSpc + RCmd + RBackspace)`
+1. Put your dz60 in DFU mode: L3 + L2 + RESET `# based on current keymap -> (LCtrl + RCmd + RBackspace)`
 1. Click the `Flash` button
 
 
@@ -23,9 +23,10 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 ## Base Layer
 
 <!-- |  ~` |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  | BS  |     | -->
+<!-- |  ~` |     |     |     |     |     |     |     |     |     |     |  -  |  =  | BS  |     | -->
 ```
 ,-----------------------------------------------------------------------------------------.
-|  ~` |     |     |     |     |     |     |     |     |     |     |  -  |  =  | BS  |     |
+|  ~` |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  | BS  |     |
 |-----------------------------------------------------------------------------------------+
 | Tab/L3 | Q/1 | W/2 | E/3 | R/4 | T/5 | Y/6 | U/7 | I/8 | O/9 | P/0 |  [  |  ]  |   |\   |
 |-----------------------------------------------------------------------------------------+
@@ -33,7 +34,7 @@ A macOS-specific keymap for [DZ60](https://kbdfans.cn/products/dz60-60-pcb) conf
 |-----------------------------------------------------------------------------------------+
 |   Shift  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |  Sh  |  U  | Del |
 |-----------------------------------------------------------------------------------------+
-| LC/L3 |  Alt  |  Cmd  |  Space/L3  | Hyper |   Space   | Cmd  |  L1   |  L  |  D  |  R  |
+| LC/L3 |  Alt  |  Cmd  |    Space   | Hyper |   Space   | Cmd  |  L1   |  L  |  D  |  R  |
 `-----------------------------------------------------------------------------------------'
 ```
 
