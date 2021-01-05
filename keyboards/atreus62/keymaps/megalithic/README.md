@@ -8,9 +8,9 @@ A macOS-specific keymap for [Atreus62](https://github.com/profet23/atreus62).
 1. `brew tap osx-cross/avr; brew tap PX4/homebrew-px4; brew install avr-gcc@8; brew link --force avr-gcc@8; brew install dfu-programmer dfu-util gcc-arm-none-eabi avrdude qmk; brew cask install qmk-toolbox;`
 1. `qmk clone megalithic/qmk_firmware`
 1. `qmk setup` or `cd qmk_firmware; ./util/qmk_install.sh && make git-submodule`
-1. `make atreus62:megalithic`
-1. Launch QMK Toolbox
-1. Open your newly compiled `atreus62_megalithic.hex`
+1. `make atreus62:megalithic:dfu`
+<!-- 1. Launch QMK Toolbox -->
+<!-- 1. Open your newly compiled `atreus62_megalithic.hex` -->
 1. Put your Atreus62 in DFU mode: L1 + L2 + RESET `# based on current keymap -> (LCtrl + Enter + RGUI)`
 1. Click the `Flash` button
 
