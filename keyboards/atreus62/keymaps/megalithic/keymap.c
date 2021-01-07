@@ -47,12 +47,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // -- COMBOS:
 //
-enum combos {
-    CTRL_BSPC_DEL
-};
+/* enum combos { */
+/*     CTRL_BSPC_DEL */
+/* }; */
 
-const uint16_t PROGMEM ctrl_bspc_del_combo[] = {KC_LCTL, KC_BSPC, COMBO_END};
+/* const uint16_t PROGMEM ctrl_bspc_del_combo[] = {KC_LCTL, KC_BSPC, COMBO_END}; */
 
-combo_t key_combos[COMBO_COUNT] = {
-    [CTRL_BSPC_DEL] = COMBO(ctrl_bspc_del_combo, KC_DEL)
-};
+/* combo_t key_combos[COMBO_COUNT] = { */
+/*     [CTRL_BSPC_DEL] = COMBO(ctrl_bspc_del_combo, KC_DEL) */
+/* }; */
